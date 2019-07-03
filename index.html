@@ -15,17 +15,15 @@
       <h1>Your JavaScript is disabled!</h1>
     </noscript>
     <script>
-      {
-        var a = 123;
-      }
-      console.log(a);
-      {
-        let b = 456;
-      }
-      // console.log(b);
+      const a = {
+        name: 'b'
+      };
 
-      // console.log(c);
-      let c = 425;
+      // can't reasign
+      // a = 2;
+
+      a.name = 'c';
+      console.log(a);
     </script>
   </body>
 </html>

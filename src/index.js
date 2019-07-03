@@ -6,14 +6,20 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 // -----
 
 const number = 99;
+let result;
 
-const result =
-  number === 1
-    ? 'One'
-    : number === 99
-    ? 'Ninety-Nine'
-    : number === 1000
-    ? 'One thousand'
-    : 'No match'
+switch (number) {
+  case 1:
+    result = 'One';
+    break;
+  case 99:
+    result = 'Ninety-Nine';
+    break;
+  case 1000:
+    result = 'One Thousand';
+    break;
+  default:
+    result = 'No Match';
+}
 
 console.log(result);

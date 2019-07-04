@@ -5,13 +5,14 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // -----
 
-console.log(parseInt('55px', 10)); // 55
-console.log(parseInt('55.9999px', 10)); // 55
-console.log(parseInt('55.9999px')); // 55.9999
+const result = Number('55px');
 
-console.log(Number('55e10')); // 550000000000
-console.log(Number('55.9999')); // 55.9999
-console.log(Number('55.9999px')); // NaN
+// isNaN "NaN"
+console.log(isNaN(result)); // true
+console.log(isNaN('I am a String')); // true
 
-console.log(+'99.5555'); // 99.5555
-console.log(9 + +'99.5555'); // 108.5555
+console.log(Number.isNaN(result)); // true
+console.log(Number.isNaN('I am another String')); // false
+
+console.log(Number.isInteger(66)); // true
+console.log(Number.isInteger(.99)); // false

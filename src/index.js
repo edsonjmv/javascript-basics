@@ -5,13 +5,13 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // -----
 
-console.log(0.1 + 0.2); // 0.30000000000000004
-console.log(100 / 3); // 33.333333333333336
+console.log(parseInt('55px', 10)); // 55
+console.log(parseInt('55.9999px', 10)); // 55
+console.log(parseInt('55.9999px')); // 55.9999
 
-const price = 9.33;
-const quantity = 3;
-console.log(price * quantity); // 27.990000000000002
+console.log(Number('55e10')); // 550000000000
+console.log(Number('55.9999')); // 55.9999
+console.log(Number('55.9999px')); // NaN
 
-const anotherPrice = 9.33 * 100;
-const anotherQuantity = 3;
-console.log(anotherPrice * anotherQuantity / 100); // 27.99
+console.log(+'99.5555'); // 99.5555
+console.log(9 + +'99.5555'); // 108.5555

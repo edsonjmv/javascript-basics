@@ -5,14 +5,12 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // -----
 
-console.log(Number.prototype);
+console.log(typeof 'Pepperoni'); // string
 
-console.log((99.12345678).toFixed(2)); // 99.12
-console.log((99.12345678).toFixed(4)); // 99.1235
-console.log((99).toFixed(4)); // 99.0000
+console.log('Pepperoni' instanceof String); // false
 
-// console.log(99.toFixed(4)); // gives error because the number is not wrapped
+console.log(new String('Pepperoni') instanceof String); // true
 
-console.log(99..toFixed(4)); // 99.0000
+console.log(String('Pepperoni') instanceof String); // false
 
-console.log(44.55.toFixed()); // 45
+console.log(Object.prototype.toString.call('Pepperoni')); // [object String]

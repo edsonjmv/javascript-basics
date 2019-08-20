@@ -4,19 +4,32 @@ const app = document.getElementById('app');
 app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // -----
-console.log(true, false);
 
-const arg = 'X';
-console.log(Boolean(arg)); // true
-console.log(!!arg); // true
-console.log(Boolean([])); // true
-console.log(Boolean({})); // true
+// hoisting
+console.log(makeCar); // function makeCar() { console.log('Making car...'); }
+console.log(makeCarExpression); // undefined
+console.log(makeCarArrow); // undefined
+console.log(makeCarArrowShorthand); // undefined
 
-console.log(new Boolean(arg));
+// 1: Function Declaration
+function makeCar() {
+  console.log('Making car...');
+}
 
-console.log(typeof true); // boolean
-console.log(typeof false); // boolean
+makeCar();
 
-console.log(true instanceof Boolean); // false
-console.log(new Boolean('X') instanceof Boolean); // true
-console.log(Object.prototype.toString.call(true)); // [object Boolean]
+// 2: Function Expression (anonymous or named)
+const makeCarExpression = function () {};
+
+console.log(makeCarExpression);
+
+// 3: Arrow Function
+const makeCarArrow = () => {
+  console.log('Making car inside Arrow...');
+};
+
+makeCarArrow();
+
+const makeCarArrowShorthand = () => console.log('Short');
+
+makeCarArrowShorthand();

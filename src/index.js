@@ -5,19 +5,12 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // -----
 
-// old way
-function makeCarPrice() {
-  console.log(arguments);
-  const total = Array.from(arguments).reduce((prev, next) => prev + next);
-  console.log(`Total: ${total}USD`);
+function makeCarPrice(...params) {
+  return params.reduce((prev, next) => prev + next);
 }
 
-makeCarPrice(11, 44, 55, 99, 66);
+const makeCarPriceArrow = (...params) => params.reduce((prev, next) => prev + next);
 
-//new way (rest parameters)
-function makeCarPriceRest(...params) {
-  const total = params.reduce((prev, next) => prev + next);
-  console.log(`Total: ${total}USD`);
-}
+console.log(`Total: ${makeCarPrice(11, 22, 33, 44, 55, 66)}`);
 
-makeCarPriceRest(99, 88, 77, 11, 44);
+console.log(`Total: ${makeCarPriceArrow(11, 22, 33, 44, 55, 66)}`);

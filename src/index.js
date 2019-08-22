@@ -5,13 +5,20 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // -----
 
-function carPartId(name, fn) {
-  const theId = `Car_Part_x8z0s2`;
-  return fn(`${theId}_${name}`);
+const firstCar = { id: 'x8KszK0' };
+const secondCar = { id: 'bc90slqa' };
+const thirdCar = { id: 'h9sNsa' };
+
+function carPartId(name, quantity) {
+  console.log(`${this.id}_${name}_${quantity}`);
 }
 
-const carPart = carPartId('Left Door', function (id) {
-  return `Car Part ID: ${id}`;
-});
+const boundThirdCar = carPartId.bind(thirdCar);
+boundThirdCar('Windscreen', 99);
+boundThirdCar('Exhaust', 9);
 
-console.log(carPart);
+// call = c = commas
+carPartId.call(firstCar, 'Left Door', 12);
+
+// apply = a = array
+carPartId.apply(secondCar, ['Right Door', 21]);

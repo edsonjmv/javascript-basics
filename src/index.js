@@ -5,11 +5,13 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // -----
 
-const carPartId = (id => {
-  const theId = `CAR_PART_${id}`;
-  return name => `${theId}_${name}`;
-})('x7H8sFf');
+function carPartId(name, fn) {
+  const theId = `Car_Part_x8z0s2`;
+  return fn(`${theId}_${name}`);
+}
 
-console.log(carPartId('Left Door'));
-console.log(carPartId('Right Door'));
-console.log(carPartId('Windscreen'));
+const carPart = carPartId('Left Door', function (id) {
+  return `Car Part ID: ${id}`;
+});
+
+console.log(carPart);

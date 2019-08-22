@@ -5,12 +5,17 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // -----
 
-function makeCarPrice(...params) {
-  return params.reduce((prev, next) => prev + next);
+function makeCarPartID(id) {
+  const theId = `CAR_PART_${id}`;
+  return name => `${theId}_${name.toUpperCase()}`;
 }
 
-const makeCarPriceArrow = (...params) => params.reduce((prev, next) => prev + next);
+const carPartId = makeCarPartID('x8YdsZ12');
+console.log(carPartId('Left Door'));
+console.log(carPartId('Right Door'));
+console.log(carPartId('Windscreen'));
 
-console.log(`Total: ${makeCarPrice(11, 22, 33, 44, 55, 66)}`);
-
-console.log(`Total: ${makeCarPriceArrow(11, 22, 33, 44, 55, 66)}`);
+const anotherCarPartId = makeCarPartID('7hs9zSaq0');
+console.log(anotherCarPartId('Left Door'));
+console.log(anotherCarPartId('Right Door'));
+console.log(anotherCarPartId('Windscreen'));

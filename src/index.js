@@ -14,23 +14,23 @@ const drink = {
   }
 };
 
-console.log(drink);
+// value exists
 
-const id = 1234;
+if (drink.id) {
+  console.log(drink.id);
+}
 
-const myDrinkId = drink.id;
-const myDrinkName = drink.name;
-const myDrinkSalePrice = drink.price.sale;
-console.log(myDrinkId);
-console.log(myDrinkName);
-console.log(myDrinkSalePrice);
+for (const prop in drink) {
+  if(drink[prop] === 'Lemonade') {
+    console.log(prop);
+  }
+}
 
-const {
-  id: myId,
-  price: { full },
-  ...rest
-} = drink;
-console.log(id, myId, full, rest);
+const hasLemonade = Object.values(drink).includes('Lemonade');
+console.log(hasLemonade);
 
-const { sale } = drink.price;
-console.log(sale);
+// property exists
+
+console.log(drink.hasOwnProperty('name'));
+console.log(Object.prototype.hasOwnProperty.call(drink, 'name'));
+console.log(Object.keys(drink).includes('name'));

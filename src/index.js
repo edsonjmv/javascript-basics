@@ -5,10 +5,16 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // -----
 
+const id = 'xhs8Pla';
+const name = 'Lemonade';
+const price = 99;
+
+const someKey = 'name';
+
 const drink = {
-  id: 'xhs8Pla',
-  name: 'Lemonade',
-  price: 99,
+  id,
+  [someKey]: name,
+  price,
   getDrinkDetails() {
     return `Drink ${this.name} (${this.price})`;
   },
@@ -16,9 +22,4 @@ const drink = {
   100: 'I am a number!'
 };
 
-const myId = 'id';
-
-console.log(drink[myId]);
-console.log(drink.getDrinkDetails());
-console.log(drink['abc 123']);
-console.log(drink[100]);
+console.log(drink);

@@ -14,14 +14,19 @@ const drink = {
   }
 };
 
-/* drink.brand = 'My Drinks Co.';
-drink.name = 'Peach'; */
+// slow
+// delete drink.id;
 
-function propUpdate(prop, value) {
-  drink[prop] = value;
+drink.id = undefined;
+
+if (drink.id) {
+  console.log('Has ID...');
 }
 
-propUpdate('brand', 'My Drinks Co.');
-propUpdate('name', 'Lime');
+console.log(drink.hasOwnProperty('id'));
+
+const { price, ...rest } = drink;
+
+console.log(price, rest);
 
 console.log(drink);

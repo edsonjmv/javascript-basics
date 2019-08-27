@@ -14,18 +14,28 @@ const drink = {
   }
 };
 
-function getType(obj) {
-  return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase();
+const drinkWithId = Object.create(drink);
+drinkWithId.id = 'xhs8Pla';
+console.log(drinkWithId);
+
+console.log('name' in drinkWithId);
+
+for (const prop in drinkWithId) {
+  if (drinkWithId.hasOwnProperty(prop)) {
+    console.log(prop, drinkWithId[prop]);
+  }
 }
 
-console.log(typeof drink); // object
-console.log(typeof []); // object
-console.log(typeof null); // object
+console.log('-----');
 
-console.log({} instanceof Object); // true
-console.log([] instanceof Object); // true
-console.log(null instanceof Object); // false
+console.log(drink);
 
-console.log(getType(drink)); // object
-console.log(getType(null)); // null
-console.log(getType([])); // array
+// for..in
+for (const prop in drink) {
+  const value = drink[prop];
+  if (Object.prototype.toString.call(value) === '[object Object]') {
+    for (const key in value) {
+      console.log(key);
+    }
+  }
+}

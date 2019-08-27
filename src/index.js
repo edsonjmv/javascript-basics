@@ -7,24 +7,16 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 const drink = {
   id: 'xhs8Pla',
-  name: 'Lemonade',
-  price: {
-    sale: 99,
-    full: 129
-  }
+  name: 'Lemonade'
 };
 
-// shallow copies
-// const drinkClone = Object.assign({}, drink);
-// const drinkClone = { ...drink };
+const price = {
+  sale: 99,
+  full: 129
+}
 
-// deep copy
-const drinkStringified = JSON.stringify(drink);
-const drinkClone = JSON.parse(drinkStringified);
+// const mergedDrink = Object.assign({}, drink, { price });
+const mergedDrink = { ...drink, ...{ price } };
 
-drinkClone.id = 'abcd';
-drinkClone.price.sale = 79;
-
-console.log(drink);
-
-console.log(drinkClone);
+console.log(drink, price);
+console.log(mergedDrink);

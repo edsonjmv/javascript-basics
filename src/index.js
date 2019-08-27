@@ -14,19 +14,17 @@ const drink = {
   }
 };
 
-// slow
-// delete drink.id;
+// shallow copies
+// const drinkClone = Object.assign({}, drink);
+// const drinkClone = { ...drink };
 
-drink.id = undefined;
+// deep copy
+const drinkStringified = JSON.stringify(drink);
+const drinkClone = JSON.parse(drinkStringified);
 
-if (drink.id) {
-  console.log('Has ID...');
-}
-
-console.log(drink.hasOwnProperty('id'));
-
-const { price, ...rest } = drink;
-
-console.log(price, rest);
+drinkClone.id = 'abcd';
+drinkClone.price.sale = 79;
 
 console.log(drink);
+
+console.log(drinkClone);

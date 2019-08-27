@@ -14,28 +14,11 @@ const drink = {
   }
 };
 
-const drinkWithId = Object.create(drink);
-drinkWithId.id = 'xhs8Pla';
-console.log(drinkWithId);
+Object.keys(drink).forEach(prop => {
+  console.log(prop);
+  console.log(drink[prop]);
+})
 
-console.log('name' in drinkWithId);
-
-for (const prop in drinkWithId) {
-  if (drinkWithId.hasOwnProperty(prop)) {
-    console.log(prop, drinkWithId[prop]);
-  }
-}
-
-console.log('-----');
+console.log(Object.entries(drink));
 
 console.log(drink);
-
-// for..in
-for (const prop in drink) {
-  const value = drink[prop];
-  if (Object.prototype.toString.call(value) === '[object Object]') {
-    for (const key in value) {
-      console.log(key);
-    }
-  }
-}

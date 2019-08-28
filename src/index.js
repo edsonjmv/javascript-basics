@@ -5,16 +5,13 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // -----
 
-const drinks = ['Lemonade', 'Lime', 'Peach'];
+const drinks = [['Lemonade', 99], ['Lime', 79], ['Peach', 89]];
 
-drinks[0] = 'Diet Lemonade';
-// drinks['favourite'] = 'Cola';
+const drinkOne = drinks[0];
+const drinkTwo = drinks[1];
 
-console.log(drinks);
-console.log(drinks[0]);
-console.log(drinks[drinks.length - 1]);
-
-// drinks.length = 0;
-drinks.splice(0, drinks.length);
+console.log(`Drink: ${drinkOne[0]}, Price: ${drinkOne[1]}$`);
+console.log(`Drink: ${drinkTwo[0]}, Price: ${drinkTwo[1]}$`);
+console.log(`Drink: ${drinks[2][0]}, Price: ${drinks[2][1]}$`);
 
 console.log(drinks);

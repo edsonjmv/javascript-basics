@@ -5,12 +5,23 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // -----
 
-const drinks = [['Lemonade', 99], ['Lime', 79], ['Peach', 89]];
+const drinks = ['Lemonade', 'Lime', 'Peach'];
 
-const [ drinkOne, [a, b], ...rest ] = drinks;
+// beginning
+console.log([ 'Water', ...drinks ]); //immutable
+drinks.unshift('Water'); // mutable
 
-console.log(drinkOne);
-console.log(a, b);
-console.log(rest);
+// middle
+const index = 1;
+console.log([
+  ...drinks.splice(0, index),
+  'Mojito',
+  ...drinks.splice(index - 1)
+]); //immutable
+drinks.splice(index, 0, 'Cola'); // mutable
+
+// end
+console.log([ ...drinks, 'Beer' ]); //immutable
+drinks.push('Beer'); // mutable
 
 console.log(drinks);

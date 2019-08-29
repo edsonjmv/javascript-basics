@@ -8,20 +8,17 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 const drinks = ['Lemonade', 'Lime', 'Peach'];
 
 // beginning
-console.log([ 'Water', ...drinks ]); //immutable
-drinks.unshift('Water'); // mutable
-
-// middle
-const index = 1;
-console.log([
-  ...drinks.splice(0, index),
-  'Mojito',
-  ...drinks.splice(index - 1)
-]); //immutable
-drinks.splice(index, 0, 'Cola'); // mutable
+const removed = drinks.shift();
+console.log(removed);
 
 // end
-console.log([ ...drinks, 'Beer' ]); //immutable
-drinks.push('Beer'); // mutable
+const removed_ = drinks.pop();
+console.log(removed_);
+
+// slice = anywhere
+const index = drinks.length - 1;
+const newDrinks = [ ...drinks.slice(0, index), ...drinks.slice(index + 1) ];
+
+console.log(newDrinks);
 
 console.log(drinks);

@@ -5,12 +5,16 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // -----
 
-const drinks = [['Lemonade', 99], ['Lime', 79]];
-const newDrinks = ['Peach', 89];
+const drinks = [
+  { name: 'Lemonade', price: 99 },
+  { name: 'Lime', price: 79 },
+  { name: 'Peach', price: 89 },
+]
 
-// const merged = drinks.concat(newDrinks);
-const merged = [ ...drinks, newDrinks ];
+console.log(drinks.reverse());
 
-console.log(merged);
-console.log(drinks);
-console.log(newDrinks);
+// sort lowest to highest
+console.log(drinks.sort((a, b) => a.price - b.price));
+
+// sort highest to lowest
+console.log(drinks.sort((a, b) => b.price - a.price));

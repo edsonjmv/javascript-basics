@@ -5,20 +5,18 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // -----
 
-const drinks = ['Lemonade', 'Lime', 'Peach'];
+const drinks = [['Lemonade', 99], ['Lime', 79], ['Peach', 89]];
 
-// beginning
-const removed = drinks.shift();
-console.log(removed);
+// Mutable - Shallow cloning
+// const drinksClone = [ ...drinks ];
+// const drinksClone = drinks.slice();
+// const drinksClone = Array.from(drinks);
 
-// end
-const removed_ = drinks.pop();
-console.log(removed_);
+// Immutable - Deep cloning
+const drinksClone = JSON.parse(JSON.stringify(drinks));
 
-// slice = anywhere
-const index = drinks.length - 1;
-const newDrinks = [ ...drinks.slice(0, index), ...drinks.slice(index + 1) ];
+drinksClone[0][1] = 1000;
 
-console.log(newDrinks);
+console.log(drinksClone);
 
 console.log(drinks);
